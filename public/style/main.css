@@ -325,7 +325,7 @@ h1 {
     padding: 20px;
     width: 70%;
     height: auto;
-    border-radius: 15px;
+    border-radius: 25px;
     padding-bottom:40px ;
     margin-bottom: 30px;
 }
@@ -344,6 +344,8 @@ h1 {
 .box p{
     padding: 20px 80px;
     margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 /* Button Styling */
@@ -371,3 +373,93 @@ button:hover {
 
 
 /* --------------------------------------------------------------------- */
+
+.main-post{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-post{
+    width: 60vw;
+    height: 550px;
+}
+
+
+.headingOfNewPost {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #6b6bf8;
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 25px;
+}
+
+li:first-child {
+    position: relative;
+}
+
+li:first-child:before {
+    content: "Feel free to share anything—big or small....";
+    display: block;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #6b6bf8;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+textarea, input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid #e0e0e0;
+    font-size: 16px;
+    background-color: white;
+    color: #333;
+    box-sizing: border-box;
+}
+
+textarea:focus, input[type="text"]:focus {
+    outline: none;
+    border-color: #6b6bf8;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.postSubmitButton-permanent {
+    background-color: #6b6bf8;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: background-color 0.3s;
+}
+
+/* .postSubmitButton-permanent:hover {
+    background-color: #5858e6;
+} */
+
+::placeholder {
+    color: #aaa;
+}

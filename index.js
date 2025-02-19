@@ -25,6 +25,17 @@ app.get("/",(req,res)=>{
     // res.send(dataEntered)
 })
 
+app.get("/newPost",(req,res)=>{
+    res.render("post.ejs")
+})
+app.post("/submit",(req,res)=>{
+    fs.appendFileSync("post.txt",JSON.stringify(req.body)+"\n",(error)=>{
+        if (error){
+            throw error
+        }
+    })
+    res.redirect("/")
+})
 
 app.listen(port,()=>{
     console.log("running At 3000")
