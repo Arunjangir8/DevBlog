@@ -32,3 +32,14 @@ document.querySelector("#password").addEventListener("mouseleave", ()=>{
     document.querySelector("#password").classList.remove("mouse-enter")
 })
 }
+
+if(document.querySelector("#loginPostSubmitButton")){
+    document.querySelector("#loginPostSubmitButton").addEventListener("mouseenter", ()=>{
+        document.querySelector("#loginPostSubmitButton").classList.remove("loginPostSubmitButton")
+        document.querySelector("#loginPostSubmitButton").classList.add("mouse-enter-post-button")
+    })
+    document.querySelector("#loginPostSubmitButton").addEventListener("mouseleave", ()=>{
+        document.querySelector("#loginPostSubmitButton").classList.add("loginPostSubmitButton")
+        document.querySelector("#loginPostSubmitButton").classList.remove("mouse-enter-post-button")
+    })
+    }

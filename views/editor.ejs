@@ -1,0 +1,19 @@
+<%- include("partials/head.ejs") %>
+<form action="/makeChanges" method="post" id="postEditor">
+    <li>
+        <h1>mistakes happen! 👍</h1>
+    </li>
+    <li>
+        <textarea name="heading" id="heading" required><%= heading %></textarea>
+    </li>
+    <li>
+        <textarea name="body" id="body" required><%= body %></textarea>
+    </li>
+    <li>
+        <h2>password:</h2>
+        <input type="text" name="password" id="password" required placeholder="<%= password %>">
+    </li>
+    <li>
+        <button type="submit" id="changPostButton">Change!</button>
+    </li>
+</form>

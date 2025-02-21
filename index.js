@@ -8,8 +8,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(e.static("public"));
 
 var dataEntered = [];
-function readText(req,res,next){
-    dataEntered = fs.readFileSync("post.txt").toString().split("\n");
+var indexOfPostToEdit;
+var indexOfPostToDelete;
+var indexOfPostToView;
+
+async function readText(req,res,next){
+    dataEntered =await fs.readFileSync("post.txt").toString().split("\n");
     next();
 }
 app.use(readText);
@@ -28,14 +32,59 @@ app.get("/",(req,res)=>{
 app.get("/newPost",(req,res)=>{
     res.render("post.ejs")
 })
+
 app.post("/submit",(req,res)=>{
-    fs.appendFileSync("post.txt",JSON.stringify(req.body)+"\n",(error)=>{
+    fs.appendFileSync("post.txt","\n"+JSON.stringify(req.body),(error)=>{
         if (error){
             throw error
         }
     })
     res.redirect("/")
 })
+
+app.post("/viewPost",(req,res)=>{
+    indexOfPostToView = req.body.indexInArray;
+    res.render("viewpost.ejs",{
+        heading: JSON.parse(dataEntered[indexOfPostToView]).heading,
+        body: JSON.parse(dataEntered[indexOfPostToView]).body
+    })
+})
+
+app.post("/deleteLogin",(req,res)=>{
+    indexOfPostToDelete = req.body.indexInArray;
+    res.render("deletepost.ejs")
+})
+
+app.post("/deletePost",(req,res)=>{
+    res.redirect("/")
+})
+
+app.post("/editPost",(req,res)=>{
+    indexOfPostToEdit = req.body.indexInArray;
+    res.render("loginPost.ejs");   
+})
+app.post("/editor",(req,res)=>{
+    if(req.body.password===JSON.parse(dataEntered[indexOfPostToEdit]).password)
+        {
+            res.render("editor.ejs",
+                {
+                    heading: JSON.parse(dataEntered[indexOfPostToEdit]).heading,
+                    body: JSON.parse(dataEntered[indexOfPostToEdit]).body,
+                    password: JSON.parse(dataEntered[indexOfPostToEdit]).password
+                }
+            );
+        }
+        else{
+            indexOfPostToEdit = null;
+            res.redirect("/");
+        }
+})
+
+app.post("/makeChanges",(req,res)=>{
+    res.redirect("/");
+})
+
+
 
 app.listen(port,()=>{
     console.log("running At 3000")

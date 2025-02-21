@@ -1,0 +1,20 @@
+<%- include("partials/head.ejs") %>
+
+<div class="main formOfLoginPost">
+    <div class="thought-container">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <form action="/deletePost" method="post" id="loginPost">
+            <h2 class="headingOfNewPost">password:</h2>
+            <li>
+                <input type="text" name="password" placeholder="password" required id="loginInput">
+            </li>
+            <li>
+                <button type="submit" class="loginPostSubmitButton" id="loginPostSubmitButton">Delete!</button>
+            </li>
+        </form>
+    </div>
+</div>
+
+<%- include("partials/foot.ejs") %>
