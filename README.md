@@ -1,7 +1,7 @@
-# BlogSite
+# DevBlog
 
 ## Description
-BlogSite is a modern and dynamic blogging platform designed to showcase engaging content. Built with **JavaScript, HTML, and Node.js**, it provides a seamless and user-friendly experience for both writers and readers. With a clean and responsive design, BlogSite allows users to share their thoughts, ideas, and insights effortlessly.
+DevBlog is a modern and dynamic blogging platform designed to showcase engaging content. Built with **JavaScript, HTML, and Node.js**, it provides a seamless and user-friendly experience for both writers and readers. With a clean and responsive design, DevBlog allows users to share their thoughts, ideas, and insights effortlessly.
 
 ## Features
 - 📝 **Create, Edit, and Delete Posts**
