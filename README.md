@@ -5,11 +5,9 @@ DevBlog is a modern and dynamic blogging platform designed to showcase engaging 
 
 ## Features
 - 📝 **Create, Edit, and Delete Posts**
-- 🔍 **Search and Filter Blogs**
 - 📱 **Fully Responsive Design**
-- 🗃 **User Authentication & Authorization** (optional feature)
 - 🏷 **Categories and Tags for Better Organization**
-- 💬 **Comments and Reactions** (if applicable)
+- 💬 **Comments and Reactions** 
 
 ## Technologies Used
 - **Frontend:** HTML, CSS, JavaScript
