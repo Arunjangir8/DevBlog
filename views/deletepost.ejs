@@ -5,14 +5,14 @@
         <div class="bubble bubble-1"></div>
         <div class="bubble bubble-2"></div>
         <div class="bubble bubble-3"></div>
-        <form action="/deletePost" method="post" id="loginPost">
-            <h2 class="headingOfNewPost">password:</h2>
-            <li>
-                <input type="text" name="password" placeholder="password" required id="loginInput">
-            </li>
-            <li>
-                <button type="submit" class="loginPostSubmitButton" id="loginPostSubmitButton">Delete!</button>
-            </li>
+        <form action="/deletePost" method="post" id="loginPost" style="display: flex; flex-direction: column; justify-content: space-around; align-items: center; width: 50vw; padding-right:60px ; gap: 25px;">
+
+            <h2 class="headingOfNewPost" style="font-size: 50px;">Password</h2>
+            
+            <input type="text" name="password" placeholder="password" required id="loginInput" style="width: 35vw; ">
+            
+            <button type="submit" class="loginPostSubmitButton" id="loginPostSubmitButton" style="scale: 1.2;">Delete!</button>
+            
         </form>
     </div>
 </div>

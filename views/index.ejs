@@ -13,7 +13,7 @@
 <div class="content">
     <div class="box">
             <h2><%= JSON.parse(dataEntered[i]).heading %></h2>
-            <p><%= JSON.parse(dataEntered[i]).body.substring(1, 300) + " ..." %></p>
+            <p><%= JSON.parse(dataEntered[i]).body.substring(0, 300) + " ..." %></p>
             
             <div class="form">
                 <form action="/viewPost" method="post">

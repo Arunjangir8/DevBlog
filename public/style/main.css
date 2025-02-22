@@ -410,8 +410,8 @@ li:first-child {
     position: relative;
 }
 
-li:first-child:before {
-    content: "Feel free to share anything—big or small....";
+#newPostForm li:first-child:before {
+    content: "Pen down your thoughts....";
     display: block;
     font-family: Arial, sans-serif;
     font-weight: bold;
@@ -462,4 +462,43 @@ textarea {
 
 ::placeholder {
     color: #aaa;
+}
+
+
+
+
+/* ---------------------------------------------------------------------------------------- */
+/* edit post */
+
+#formOfLoginPost{
+    width: 50vw;
+    text-align: center;
+}
+#formOfLoginPost .loginPostSubmitButton{
+    background-color: #007bff;
+    color: white;
+}
+#formOfLoginPost .loginPostSubmitButton:hover{
+    background-color: #7694b4;
+}
+
+
+
+/* ---------------------------------------------------------------------------------------- */
+
+#postEditor{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#postEditor h2{
+    font-size: large;
+    color: #2d2d2d;
+}
+
+#postEditor li{
+    list-style: none;
 }
