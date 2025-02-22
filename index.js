@@ -13,7 +13,7 @@ var indexOfPostToDelete;
 var indexOfPostToView;
 
 async function readText(req,res,next){
-    dataEntered =await fs.readFileSync("post.txt").toString().split("\n");
+    dataEntered =await fs.readFileSync("post.txt").toString().split("\n").slice(0,-1);
     next();
 }
 app.use(readText);
@@ -34,7 +34,7 @@ app.get("/newPost",(req,res)=>{
 })
 
 app.post("/submit",(req,res)=>{
-    fs.appendFileSync("post.txt","\n"+JSON.stringify(req.body),(error)=>{
+    fs.appendFileSync("post.txt",JSON.stringify(req.body)+"\n",(error)=>{
         if (error){
             throw error
         }
@@ -56,6 +56,19 @@ app.post("/deleteLogin",(req,res)=>{
 })
 
 app.post("/deletePost",(req,res)=>{
+    console.log(req.body)
+    if(indexOfPostToDelete!=dataEntered.length-1){
+    dataEntered = dataEntered.slice(0,indexOfPostToDelete) + dataEntered.slice(indexOfPostToDelete+1,-1)
+    }else{
+        dataEntered = dataEntered.slice(0,indexOfPostToDelete)
+    }
+    var finalText = ''
+    dataEntered.map((item)=>{
+        finalText += `${item}` + '\n'
+    })
+    console.log(finalText)
+
+    fs.writeFileSync("post.txt",(finalText))
     res.redirect("/")
 })
 
@@ -70,7 +83,8 @@ app.post("/editor",(req,res)=>{
                 {
                     heading: JSON.parse(dataEntered[indexOfPostToEdit]).heading,
                     body: JSON.parse(dataEntered[indexOfPostToEdit]).body,
-                    password: JSON.parse(dataEntered[indexOfPostToEdit]).password
+                    password: JSON.parse(dataEntered[indexOfPostToEdit]).password,
+                    index : indexOfPostToEdit
                 }
             );
         }
@@ -81,6 +95,16 @@ app.post("/editor",(req,res)=>{
 })
 
 app.post("/makeChanges",(req,res)=>{
+    dataEntered[parseInt(req.body.index)] = JSON.stringify({
+        heading: req.body.heading,
+        body: req.body.body,
+        password: req.body.password
+    })
+    var finalText = ''
+    dataEntered.map((item)=>{
+        finalText += `${item}` + '\n'
+    })
+    fs.writeFileSync("post.txt",finalText)
     res.redirect("/");
 })
 
