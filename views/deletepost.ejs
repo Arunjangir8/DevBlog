@@ -1,15 +1,15 @@
 <%- include("partials/head.ejs") %>
 
 <div class="main formOfLoginPost">
-    <div class="thought-container">
+    <div class="thought-container" id="DelectPostContainer">
         <div class="bubble bubble-1"></div>
         <div class="bubble bubble-2"></div>
         <div class="bubble bubble-3"></div>
-        <form action="/deletePost" method="post" id="loginPost" style="display: flex; flex-direction: column; justify-content: space-around; align-items: center; width: 50vw; padding-right:60px ; gap: 25px;">
+        <form action="/deletePost" method="post" id="loginPost" style="">
 
             <h2 class="headingOfNewPost" style="font-size: 50px;">Password</h2>
             
-            <input type="text" name="password" placeholder="password" required id="loginInput" style="width: 35vw; ">
+            <input type="text" name="password" placeholder="password" required id="loginInput" style="width: 45vw; ">
             
             <button type="submit" class="loginPostSubmitButton" id="loginPostSubmitButton" style="scale: 1.2;">Delete!</button>
             
